@@ -5,28 +5,16 @@
 
 <style>
 body {
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(-45deg, #ff758c, #ff7eb3, #fad0c4, #ffdde1);
-    background-size: 400% 400%;
-    animation: gradient 10s ease infinite;
+    background: linear-gradient(to right, #ff9a9e, #fad0c4);
     text-align: center;
     font-family: Arial, sans-serif;
-    overflow: hidden;
     height: 100vh;
-    color: white;
-}
-
-@keyframes gradient {
-    0% {background-position: 0% 50%;}
-    50% {background-position: 100% 50%;}
-    100% {background-position: 0% 50%;}
+    overflow: hidden;
 }
 
 h1 {
-    margin-top: 60px;
-    font-size: 60px;
-    text-shadow: 0 0 15px rgba(0,0,0,0.4);
+    margin-top: 100px;
+    font-size: 50px;
 }
 
 h2 {
@@ -34,52 +22,26 @@ h2 {
 }
 
 button {
-    padding: 18px 40px;
-    font-size: 22px;
+    padding: 15px 30px;
+    font-size: 20px;
     border: none;
-    border-radius: 40px;
+    border-radius: 30px;
     cursor: pointer;
     position: absolute;
-    transition: 0.2s;
 }
 
 #yes {
-    background-color: #ff1744;
+    background-color: #ff4d6d;
     color: white;
-    left: 40%;
-    top: 70%;
-    box-shadow: 0 0 25px #ff1744;
+    left: 45%;
+    top: 60%;
 }
 
 #no {
     background-color: white;
     color: black;
     left: 55%;
-    top: 70%;
-}
-
-.heart {
-    position: absolute;
-    font-size: 20px;
-    animation: floatUp 5s linear infinite;
-}
-
-@keyframes floatUp {
-    0% { transform: translateY(0); opacity: 1;}
-    100% { transform: translateY(-1000px); opacity: 0;}
-}
-
-.confetti {
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    background-color: white;
-    animation: fall 3s linear infinite;
-}
-
-@keyframes fall {
-    0% { transform: translateY(-10px);}
-    100% { transform: translateY(100vh);}
+    top: 60%;
 }
 </style>
 </head>
@@ -88,9 +50,32 @@ button {
 
 <h1>Simran ❤️</h1>
 <h2>Will You Be My Valentine?</h2>
-<p>If you say no… I am sending this link to your entire family group 😌</p>
+<p>If you say no… consequences will follow 👀</p>
 
 <button id="yes" onclick="celebrate()">YES 😍</button>
-<butt
+<button id="no">NO 🙄</button>
+
+<script>
+const noButton = document.getElementById("no");
+
+noButton.addEventListener("mouseover", function() {
+    const x = Math.random() * window.innerWidth;
+    const y = Math.random() * window.innerHeight;
+    noButton.style.left = x + "px";
+    noButton.style.top = y + "px";
+});
+
+function celebrate() {
+    document.body.innerHTML = `
+        <h1>YAYYYYY ❤️❤️❤️</h1>
+        <h2>I knew it. You have excellent taste.</h2>
+        <p>Officially the best decision of your life 😌</p>
+    `;
+}
+</script>
+
+</body>
+</html>
+
 
 
